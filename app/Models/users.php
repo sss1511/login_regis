@@ -11,6 +11,8 @@ class users extends Model
     use HasFactory;
 
     protected $fillable = [
+        'first_name',
+        'last_name',
         'username',
         'email',
         'password',

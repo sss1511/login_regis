@@ -27,13 +27,28 @@ class AuthController extends Controller
 
     public function storeuser(Request $request)
     {
-        
-       $user= users::create($request->all(),['user_type' => $request['user_type']]); 
-       
 
-     
+      
+
+          $user= users::create($request->all(),['user_type' => $request['user_type']]); 
+
+
+          // if() {
+            return redirect('login')->with('status',"Registerd Successfully");
+
+          // }      
         
-       return redirect('login');
+           
+          // else
+          // {
+          //   return redirect('login')->with('failed',"already registed ");
+          // }
+
+
+   
+      
+
+       
            
           
     
@@ -41,6 +56,9 @@ class AuthController extends Controller
 
     public function userdashbord()
     {
+      
+     
+
 
       return view('userdashbord');
     }    
@@ -53,6 +71,15 @@ class AuthController extends Controller
     }   
 
 
+
+    public function usershowblogs()
+    {
+
+      $get=blogs::latest()->paginate(5);
+
+       return view('userblogs',compact('get'));
+    }   
+    
 
 
 //for login
@@ -94,7 +121,7 @@ class AuthController extends Controller
       } else {
 
         // echo"loged out";
-        return redirect('login')->with('failed',"operation failed");;
+        return redirect('login')->with('failed',"USERNAME & PASSOWORD NOT FOUND ");
       }	
     }	 
      

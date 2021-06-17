@@ -92,25 +92,27 @@ class blogsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updated(Request $request, $id)
     {
-       
-        $product->update($request->all());
+      
+        $blog= blogs::find($id);
+        $blog->title=$request->title;
+        $blog->blogs=$request->blogs;
+        $blog->save();
+    
+        return redirect('admindashbord');
 
-        return redirect()->route('products.index')
-            ->with('success', 'Product updated successfully');
     }
 
     
-
-
-
-
-    public function delete($id)
+    public function delete( $id)
     {
-        $product->delete();
+        
+       $blog=blogs::where('id', $id)->delete();
+      
+    //    echo"deleted sucessfully";
 
-        return redirect()->route('show')
-            ->with('success', 'Product deleted successfully');
+       return redirect('admindashbord');
+       
     }
 }

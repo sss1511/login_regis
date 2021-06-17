@@ -1,3 +1,4 @@
+
 <style>
 /* Bordered form */
 form {
@@ -73,6 +74,7 @@ span.psw {
 
 </style>
 <form action="{{url('/addblogs')}}" method="post">
+
   
 @csrf
 
@@ -80,15 +82,15 @@ span.psw {
     <label ><b>title</b></label>
     <input type="text" placeholder="Enter title" name="title" required>
 
-    <label ><b>blogs</b></label>
-    <input type="text" placeholder="Enter blogs" name="blogs" required>
+    <label ><b>body</b></label>
+    <textarea id="blogs" name="blogs" rows="4" cols="50">
+
+</textarea>
 
     <button type="submit">SAVE</button>
     
   </div>
   <div class="container" style="background-color:#f1f1f1">
-
-    <button type="button" class="cancelbtn">Cancel</button>
    
   </div>
 </form>

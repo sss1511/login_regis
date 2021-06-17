@@ -1,4 +1,6 @@
-<h1>welcome to admin dashbord</h1>
+
+<h1>welcome to admin-dashbord</h1>
+
 
 @if (session('status'))
 <div class="alert alert-success" role="alert">
@@ -10,16 +12,12 @@
 @endif
 
 
-
-
-
  <p>{{ Auth::user()->username}}</p>
 
-<a href="logout">logout</a>
+<a href="logout">LOGOUT</a>
 
-
-
-
-<a href="addblogs"> ADD BLOGS</a>
 <a href="showblogs">SHOW BLOGS</a>
+
+
+@include('addblogs')
 

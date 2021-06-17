@@ -70,32 +70,28 @@ span.psw {
     width: 100%;
   }
 }
-
 </style>
 
+@include('userdashbord')
 
-<form action="{{URL::to('update/'. $blogs->id)}}" method="post">
-
-@csrf
-  <div class="container">
-
-
-    <label ><b>title</b></label>
-
-    <input type="text" name="title" value='<?php  echo $blogs['title']; ?>' />
-
-   
-       <label ><b>blogs</b></label>
-       <input type="textarea" name="blogs" value='<?php  echo $blogs['blogs']; ?>' />
-       
-    
+<table class="table table-bordered">
         
-    <button type="submit">UPDATE</button>
-    
-  </div>
-  <div class="container" style="background-color:#f1f1f1">
 
- 
-   
-  </div>
-</form>
+
+		@foreach ($get as $blogs) 
+
+      
+
+            <div class="input-group">
+		
+		<p>{{$blogs->title}} </p>
+	</div>
+    <div class="input-group">
+		
+		<p>{{$blogs->blogs}}</p>
+	</div>
+            
+                    
+        </tr>
+		@endforeach
+    </table>

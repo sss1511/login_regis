@@ -21,6 +21,7 @@ Route::get('/',[AuthController::class, 'home']);
 
 Route::get('/userdashbord',[AuthController::class, 'userdashbord']);
 
+Route::get('/userblogs',[AuthController::class, 'usershowblogs']);
 
 Route::get('/register',[AuthController::class, 'register']);
 
@@ -40,6 +41,9 @@ Route::post('/loginget', [AuthController::class,'authenticate']);
 Route::get('/logout',[AuthController::class, 'logout']);
 
 
+
+
+
 // Route::resource('products',[ProductController::class]);
 
 
@@ -55,9 +59,10 @@ Route::get('blogedit/{id}',[blogsController::class, 'edit']);
 
 Route::get('showbyid/{id}',[blogsController::class, 'show']);
 
-Route::get('{id}/update',[blogsController::class, 'update']);
 
-Route::POST('deleteblog/id',[blogsController::class, 'delete']);
+Route::post('update/{id}',[blogsController::class, 'updated']);
+
+Route::post('deleteblog/{id}',[blogsController::class, 'delete']);
 
 
 Route::group(['middleware' => 'AdminViewUnAuth'], function ()

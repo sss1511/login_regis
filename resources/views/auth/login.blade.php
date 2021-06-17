@@ -77,22 +77,26 @@ span.psw {
 </html>
 
 <div>
+
+    
 @if (session('status'))
 <div class="alert alert-success" role="alert">
-<p>succes</p>
-	<button type="button" class="close" data-dismiss="alert">×</button>
-<p>	{{ session('status') }}</p>
+	<button type="button" class="close" data-dismiss="alert">{{ session('status') }}</button>
+<p>	</p>
 </div>
 
 @elseif(session('failed'))
 <div class="alert alert-danger" role="alert">
-<p>failed</p>
-	<button type="button" class="close" data-dismiss="alert">×</button>
-	<p>{{ session('failed') }}</p>
+	<button type="button" class="close" data-dismiss="alert">{{ session('failed') }}</button>
+	<p></p>
 </div>
 @endif
 
 </div>
+
+<div class="container">
+    <h1>LOGIN</h1>
+    </div>
 
 <form action="{{url('/loginget')}}" method="POST">
 @csrf
@@ -107,13 +111,13 @@ span.psw {
 
     <button type="submit">Login</button>
     <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+      
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-    <p>createan account? <a href="register">Sign in</a>.</p>
+    
+    <p>createan account? <a href="register">SIGN UP</a>.</p>
   </div>
 </form>
+
+

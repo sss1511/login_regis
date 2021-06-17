@@ -1,6 +1,6 @@
 
 <html>
-<h1>welocme to userdashbord</h1>
+<h1>welocme to User-dashbord</h1>
 
 
 
@@ -15,14 +15,8 @@
 
 <p>{{ Auth::user()->username}}</p>
 
-
-
-
-
 <a href="logout"> logout</a>
 
-
-
-
+<a href="userblogs">SHOW ALL BLOGS</a>
 
 

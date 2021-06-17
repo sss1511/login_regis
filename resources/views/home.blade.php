@@ -68,7 +68,9 @@ body {
   </div>
 </div>
 
+@include('auth.login ')
 <div style="padding-left:20px">
+
   
 </div>
 

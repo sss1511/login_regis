@@ -78,20 +78,26 @@ a {
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
+    <label for="email"><b>first name</b></label>
+    <input type="text" placeholder="Enter first name" name="first_name" id="first_name" required>
 
-    <label for="username"><b>Username</b></label>
+    <label for="email"><b>last name</b></label>
+    <input type="text" placeholder="Enter last name" name="last_name" id="last_name" required>
+
+    <label for="username"><b>username</b></label>
     <input type="text" placeholder="Enter Username" name="username" id="Username" required>
+
 
     <label for="email"><b>email</b></label>
     <input type="text" placeholder="Enter email" name="email" id="email" required>
 
-    <label for="password"><b>Password</b></label>
+
+    <label for="password"><b>password</b></label>
     <input type="password" placeholder="Enter Password" name="password" id="password" required>
 
     
     <hr>
-
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+  
 
     <button type="submit" class="btn btn-primary">Register</button>
   </div>

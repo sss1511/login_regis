@@ -25,8 +25,6 @@ Route::get('/userblogs',[AuthController::class, 'usershowblogs']);
 
 Route::get('/register',[AuthController::class, 'register']);
 
-;
-
 Route::post('/regis', [AuthController::class,'storeuser']);
 
 

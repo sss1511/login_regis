@@ -19,8 +19,10 @@ class AuthController extends Controller
    
     public function register()
     {
-
+    
       return view('auth.register');
+
+
     }
 
 
@@ -28,28 +30,24 @@ class AuthController extends Controller
     public function storeuser(Request $request)
     {
 
+
       
-
-          $user= users::create($request->all(),['user_type' => $request['user_type']]); 
-
-
-          // if() {
-            return redirect('login')->with('status',"Registerd Successfully");
-
-          // }      
+      $validatedData = $request->validate([
         
+        'email' =>'required',
+        'username' => 'required|unique:users|max:255',
+        'password' =>'required',
+       ]);
+       
+       
+        $user= users::create($request->all(),['user_type' => $request['user_type']]); 
            
-          // else
-          // {
-          //   return redirect('login')->with('failed',"already registed ");
-          // }
-
-
-   
-      
+        return redirect('login')->with('status',"Registerd Successfully");
+        
 
        
-           
+                 
+                            
           
     
     }

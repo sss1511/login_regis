@@ -70,6 +70,47 @@ a {
 <body>
 
 
+
+<div class="container">
+
+       @if (count($errors) > 0)
+
+      <div class="alert alert-danger">
+<h1> ERROR IN REGISTER</h1>
+
+
+          <ul>
+
+              @foreach ($errors->all() as $error)
+
+              <li>{{ $error }}</li>
+
+              @endforeach
+
+          </ul>
+
+      </div>
+
+    @endif
+
+
+
+    @if ($message = Session::get('success'))
+
+          <div class="alert alert-success">
+
+              <p>{{ $message }}</p>
+
+          </div>
+
+    @endif
+
+
+
+
+
+
+
 <form method="POST" action="{{url('/regis')}}">
 
   @csrf
@@ -79,23 +120,24 @@ a {
     <p>Please fill in this form to create an account.</p>
     <hr>
     <label for="email"><b>first name</b></label>
-    <input type="text" placeholder="Enter first name" name="first_name" id="first_name" required>
+
+    <input type="text" placeholder="Enter first name" name="first_name" id="first_name" >
+   
 
     <label for="email"><b>last name</b></label>
-    <input type="text" placeholder="Enter last name" name="last_name" id="last_name" required>
-
+    <input type="text" placeholder="Enter last name" name="last_name" id="last_name" >
+    
+   
     <label for="username"><b>username</b></label>
-    <input type="text" placeholder="Enter Username" name="username" id="Username" required>
-
-
+    <input type="text" placeholder="Enter Username" name="username" id="Username" >
+   
     <label for="email"><b>email</b></label>
-    <input type="text" placeholder="Enter email" name="email" id="email" required>
-
+    <input type="text" placeholder="Enter email" name="email" id="email" >
+   
 
     <label for="password"><b>password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+    <input type="password" placeholder="Enter Password" name="password" id="password" >
 
-    
     <hr>
   
 

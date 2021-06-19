@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\blogs\blogsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 //Route::post('/user/register',array('uses'=>'UserRegistration@postRegister'));
+
+Route::get('/blog', [blogsController::class, 'apitest']);

@@ -24,7 +24,7 @@ class blogsController extends Controller
         return view('show', compact('blog'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
         
-            
+           
 
     }
 
@@ -115,4 +115,20 @@ class blogsController extends Controller
        return redirect('admindashbord');
        
     }
+
+
+
+
+
+// for api
+public function apitest(){
+    // echo"hello";
+
+    $Apitest =blogs::all();
+
+        return response()->json(['status'=>200,'data'=>$Apitest],200);
 }
+
+
+}
+
